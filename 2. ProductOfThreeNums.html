@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>The sign of the three number's product</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+	<label for="tb-first">a: </label>
+	<input type="text" id="tb-first"/>
+	<br />							  
+	<label for="tb-second">b: </label>
+	<input type="text" id="tb-second"/>
+	<br />
+	<label for="tb-third">c: </label>
+	<input type="text" id="tb-third"/>
+	<br />
+	<a href="#" onclick="onFindBiggerButtonClick()">Area!</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>														 
+
+		function onFindBiggerButtonClick() {
+			var a = jsConsole.readFloat("#tb-first");
+			var b = jsConsole.readFloat("#tb-second");
+			var c = jsConsole.readFloat("#tb-third");
+			if ((a < 0 )&& (b < 0) && (c < 0))
+	        {
+	            jsConsole.writeLine("Proizvedenieto na trite chisla e: " + "(" + a + ")" + " * " + "(" + b + ")" + " * " + "(" + c + ")" + " = <strong>-</strong>");
+	        }
+	        if ((a > 0) && (b > 0) && (c > 0))
+	        {
+	            jsConsole.writeLine("Proizvedenieto na trite chisla e: " + "(" + a + ")" + " * " + "(" + b + ")" + " * " + "(" + c + ")" + " = <strong>+</strong>");
+	        }
+	        if (((a < 0) && (b < 0) && (c > 0)) || ((a < 0) && (b > 0) && (c < 0)) || ((a > 0) && (b < 0) && (c < 0)))
+	        {
+	            jsConsole.writeLine("Proizvedenieto na trite chisla e: " + "(" + a + ")" + " * " + "(" + b + ")" + " * " + "(" + c + ")" + " = <strong>+</strong>");
+	        }
+	        if(((a < 0) && (b > 0) && (c > 0)) || ((a > 0) && (b > 0) && (c < 0)) || ((a > 0) && (b < 0) && (c > 0)))
+	        {
+	            jsConsole.writeLine("Proizvedenieto na trite chisla e: " + "(" + a + ")" + " * " + "(" + b + ")" + " * " + "(" + c + ")" + " = <strong>-</strong>");
+	        }
+		}											
+	</script>			  
+</body>
+</html>

@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>The digit name</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		#number {
+			border: 1px solid black;
+			padding: 5px 15px;
+			background-color: black;
+			color: white;
+			font-family: Consolas;
+			margin-bottom: 5px;
+		}
+
+		a {
+			color: black;
+			border: 1px solid black;
+			padding: 5px 15px;
+			text-decoration: none;
+			display: inline-block;
+			margin: 15px 0;
+		}
+
+			a:hover {
+				text-decoration: underline;
+			}
+	</style>
+</head>
+<body>
+	<label for="tb-number">Number [0..999]: </label>
+	<input type="text" id="tb-number" />
+	<br />
+	<a href="#" onclick="onEvenOddButtonClick()">Name!</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>
+	<script>
+		function onEvenOddButtonClick() {
+			var num = jsConsole.readFloat("#tb-number");
+			if (num >= 0 && num < 1000)
+        	{
+	            if (num >= 100)
+	            {
+	                var hundreds = Math.floor(num / 100);
+	                var h;
+	                switch (hundreds)
+	                {
+	                    case 1: h= "One hundred"; break;
+		                case 2: h= "Two hundred"; break;
+		                case 3: h= "Three hundred"; break;
+		                case 4: h= "Four hundred"; break;
+		                case 5: h= "Five hundred"; break;
+		                case 6: h= "Six hundred" ; break;
+		                case 7: h= "Seven hundred"; break;
+		                case 8: h= "Eight hundred"; break;
+		                case 9: h= "Nine hundred"; break;
+	                }
+	                jsConsole.write(h);
+	            }
+
+	            if (num > 19)
+	            {
+	                var dec = Math.floor((num / 10) % 10);
+	                var d;
+	                switch (dec)
+	                {
+	                    case 2: d= " twenty "; break;
+		                case 3: d= " thirty "; break;
+		                case 4: d= " fourty "; break;
+		                case 5: d= " fifty "; break;
+		                case 6: d= " sixty "; break;
+		                case 7: d= " seventy "; break;
+		                case 8: d= " eighty "; break;
+		                case 9: d= " ninety "; break;
+	                    default: d= "And ";break;
+	                }
+	                jsConsole.write(d);
+
+	            }
+	            else if (num>9)
+	            {
+	                var semidec = Math.floor(num % 10);
+	                var s;
+	                switch (semidec)
+	                {
+	                    case 1: s="eleven"; break;
+		                case 2: s= "twelve"; break;
+		                case 3: s= "thirteen"; break;
+		                case 4: s= "fourteen"; break;s
+		                case 5: s= "fifteen"; break;
+		                case 6: s= "sixteen"; break;
+		                case 7: s= "seventeen"; break;
+		                case 8: s= "eighteen"; break;
+		                case 9: s= "nineteen"; break;
+	                    default: s= "ten"; break;
+	                }
+	                jsConsole.writeLine(s);
+	            }
+
+	            if (num < 10 || num > 19)
+	            {
+	                var digit = Math.floor(num % 10);
+	                var one;
+	                switch (digit)
+	                {
+	                	case 0: one = "zero"; break;
+	                    case 1: one = "one"; break;
+		                case 2: one = "two"; break;
+		                case 3: one = "three"; break;
+		                case 4: one = "four"; break;
+		                case 5: one = "five"; break;
+		                case 6: one = "six"; break;
+		                case 7: one = "seven"; break;
+		                case 8: one = "eight"; break;
+		                case 9: one = "nine"; break;
+		                case 10: one = "ten"; break;
+	                    default: one=""; break;
+	                }
+	                jsConsole.writeLine(one);
+	            }
+	        }
+	        else
+	        {
+	        	jsConsole.writeLine("Invalid number!");
+	        }
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>The biggest of three numbers</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+	<label for="tb-first">a: </label>
+	<input type="text" id="tb-first"/>
+	<br />							  
+	<label for="tb-second">b: </label>
+	<input type="text" id="tb-second"/>
+	<br />
+	<label for="tb-third">c: </label>
+	<input type="text" id="tb-third"/>
+	<br />
+	<label for="tb-fourth">d: </label>
+	<input type="text" id="tb-fourth"/>
+	<br />
+	<label for="tb-fifth">e: </label>
+	<input type="text" id="tb-fifth"/>
+	<br />
+	<a href="#" onclick="onFindBiggerButtonClick()">Area!</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>														 
+
+		function onFindBiggerButtonClick() {
+			var a = jsConsole.readFloat("#tb-first");
+			var b = jsConsole.readFloat("#tb-second");
+			var c = jsConsole.readFloat("#tb-third");
+			var d = jsConsole.readFloat("#tb-fourth");
+			var e = jsConsole.readFloat("#tb-fifth");
+			if ((a == b) && (a == c) && (a==d) && (a==e))
+	        {
+	            jsConsole.writeLine("Trite chisla sa ravni");
+	        }
+	        else
+	        {
+	            if ((a > b) && (a > c) && (a > d) && (a > e))
+	            {
+	                jsConsole.writeLine("Nai-golqmoto chislo e a= " + a);
+	            }
+	            else if ((b > a) && (b > c) && (b>d) && (b>e))
+	            {
+	                jsConsole.writeLine("Nai-golqmoto chislo e b= " + b);
+	            }
+	            else if ((c > a) && (c > b) && (c>d) && (c>e))
+	            {
+	                jsConsole.writeLine("Nai-golqmoto chislo e c= " + c);
+	            }
+	            else if ((d > a) && (d > b) && (d > c) && (d > e))
+	            {
+	                jsConsole.writeLine("Nai-golqmoto chislo e d= " + d);
+	            }
+	            else if ((e > a) && (e > b) && (e > c) && (e > d))
+	            {
+	                jsConsole.writeLine("Nai-golqmoto chislo e e= " + e);
+	            }
+	        }
+		}											
+	</script>			  
+</body>
+</html>

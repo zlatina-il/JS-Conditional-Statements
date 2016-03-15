@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Sort three numbers in descending order</title>
+	<link href="styles/js-console.css" rel="stylesheet" />
+	<style>
+		input[type=text]{
+			border:1px solid black;
+			padding:5px 15px;
+			background-color:black;
+			color:white;
+			font-family:Consolas;		   
+			margin-bottom:5px;
+		}
+
+		a{
+			color:black;
+			border:1px solid black;
+			padding:5px 15px;						
+			text-decoration:none;	   
+			display:inline-block;		 
+			margin: 15px 0;
+		}
+
+		a:hover{
+			text-decoration:underline;
+		}
+	</style>
+</head>
+<body>
+	<label for="tb-first">a: </label>
+	<input type="text" id="tb-first"/>
+	<br />							  
+	<label for="tb-second">b: </label>
+	<input type="text" id="tb-second"/>
+	<br />
+	<label for="tb-third">c: </label>
+	<input type="text" id="tb-third"/>
+	<br />
+	<a href="#" onclick="onFindBiggerButtonClick()">Area!</a>
+	<div id="console">
+	</div>
+	<script src="scripts/js-console.js">	  
+	</script>		  
+	<script>														 
+
+		function onFindBiggerButtonClick() {
+			var a = jsConsole.readFloat("#tb-first");
+			var b = jsConsole.readFloat("#tb-second");
+			var c = jsConsole.readFloat("#tb-third");
+			if ((a == b) && (a == c))
+	        {
+	            jsConsole.writeLine("Trite chisla sa ravni!");
+	        }
+	        else 
+	        {
+	            if ((a > b) && (b > c))
+	            {
+	                jsConsole.writeLine("(" + a + ") > (" + b + ") > (" + c + ")");
+	            }
+	            if ((b > a) && (a > c))
+	            {
+	                jsConsole.writeLine("(" + b + ") > (" + a + ") > (" + c + ")");
+	            }
+	            if ((c > a) && (a > b))
+	            {
+	                jsConsole.writeLine("(" + c + ") > (" + a + ") > (" + b + ")");
+	            }
+	            if ((c > a) && (a < b))
+	            {
+	                jsConsole.writeLine("(" + c + ") > (" + b + ") > (" + a + ")");
+	            }
+	        }          
+		}											
+	</script>			  
+</body>
+</html>
